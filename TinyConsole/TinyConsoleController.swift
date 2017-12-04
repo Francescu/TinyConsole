@@ -91,10 +91,14 @@ open class TinyConsoleController: UIViewController {
     
     open override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if (motion == UIEventSubtype.motionShake) {
-            consoleWindowMode = consoleWindowMode == .collapsed ? .expanded : .collapsed
-            UIView.animate(withDuration: 0.25) {
-                self.view.layoutIfNeeded()
-            }
+            toggle()
+        }
+    }
+    
+    public func toggle() {
+        consoleWindowMode = consoleWindowMode == .collapsed ? .expanded : .collapsed
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
         }
     }
     

@@ -97,6 +97,11 @@ open class TinyConsole {
         }
     }
     
+    public static func toggle() {
+        DispatchQueue.main.async {
+            TinyConsole.shared.consoleController.toggle()
+        }
+    }
     public static func error(_ text: String) {
         TinyConsole.print(text, color: UIColor.red)
     }
