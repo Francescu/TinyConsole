@@ -20,7 +20,7 @@ open class TinyConsoleController: UIViewController {
     }
     
     // MARK: - Private Properties -
-    var rootViewController: UIViewController {
+    public var rootViewController: UIViewController {
         didSet {
             setupViewControllers()
             setupConstraints()
